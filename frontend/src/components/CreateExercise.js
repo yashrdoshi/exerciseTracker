@@ -1,7 +1,7 @@
 import { Component } from "react";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'
-import axios from 'axios';
+import axios from "./axiosurl";
 
 class CreateExercise extends Component {
 
@@ -15,7 +15,7 @@ class CreateExercise extends Component {
 
     componentDidMount() {
         // const link = '/users'
-        const link = 'http://localhost:5000/users'
+        const link = 'users'
 
         axios.get(link)
             .then(res => {
@@ -52,7 +52,7 @@ class CreateExercise extends Component {
 
         console.log(exercise);
 
-        const link = 'http://localhost:5000/exercises/add';
+        const link = 'exercises/add';
         // const link = '/exercises/add'
 
         axios.post(link,exercise)

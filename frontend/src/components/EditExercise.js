@@ -1,7 +1,8 @@
 import { Component } from "react";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'
-import axios from "axios";
+import axios from "./axiosurl";
+
 
 class EditExercise extends Component {
 
@@ -16,7 +17,7 @@ class EditExercise extends Component {
     componentDidMount() {
         
         // const link1 = '/exercises/'+this.props.match.params.id;
-        const link1 = 'http://localhost:5000/exercises/'+this.props.match.params.id;
+        const link1 = 'exercises/'+this.props.match.params.id;
 
         axios.get(link1)
             .then(res => {
@@ -31,7 +32,7 @@ class EditExercise extends Component {
 
 
         // const link = '/users/'
-        const link = 'http://localhost:5000/users/'
+        const link = 'users/'
 
         axios.get(link)
             .then(res => {
@@ -68,7 +69,7 @@ class EditExercise extends Component {
         console.log(exercise);
 
         // const link = '/exercises/update/' + this.props.match.params.id;
-        const link = 'http://localhost:5000/exercises/update/' + this.props.match.params.id;
+        const link = 'exercises/update/' + this.props.match.params.id;
 
         axios.post(link,exercise)
             .then(res => console.log(res.data))

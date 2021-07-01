@@ -1,5 +1,6 @@
 import { Component } from "react";
-import axios from "axios";
+import axios from "./axiosurl";
+
 
 class CreateUser extends Component{
 
@@ -22,7 +23,7 @@ class CreateUser extends Component{
 
         console.log(user);
 
-        const link = 'http://localhost:5000/users/add';
+        const link = 'users/add';
         // const link = '/users/add';
 
         axios.post(link,user)

@@ -1,7 +1,7 @@
 import { Component } from "react";
-import axios from "axios";
 import {Link} from 'react-router-dom'
 import moment from "moment";
+import axios from "./axiosurl";
 
 const Exercise = (props) => {
 
@@ -31,7 +31,7 @@ class ExerciseList extends Component {
 
     deleteExercise = (id) => {
         // const link = '/exercises/' + id
-        const link = 'http://localhost:5000/exercises/' + id
+        const link = 'exercises/' + id
         axios.delete(link)
             .then(res => {
                 console.log(res.data);
@@ -45,7 +45,7 @@ class ExerciseList extends Component {
 
     componentDidMount() {
         // const link = '/exercises/'
-        const link = 'http://localhost:5000/exercises/'
+        const link = 'exercises/'
 
         axios.get(link)
             .then(res => {
